@@ -1,3 +1,11 @@
+body{
+	background-image: url("earth.jpg");
+	background-repeat: no-repeat;
+	height: auto;
+}
+
+
+
 .panel {
     width: 300px;
     height: 300px;
@@ -24,6 +32,7 @@
  
 .front {
     z-index: 2;
+    opacity: 0.6;
 }
  
 .back {
@@ -77,6 +86,8 @@ img{
 video{
 	width: 300px;
 	height: 300px;
+	z-index: 3;
+	opacity: 1;
 }
 
 .ribbon-wrapper-green {
@@ -132,4 +143,11 @@ video{
 .ribbon-green:after {
   right: 0;
   cursor: pointer;
+}
+
+
+.header{
+	text-align: center;
+	 color: rgba(185,244,34,0.6);
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
 }

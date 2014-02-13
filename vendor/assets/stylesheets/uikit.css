@@ -1713,6 +1713,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-navbar {
   background: #eeeeee;
   color: #444444;
+  opacity: 0.9;
 }
 /*
  * Micro clearfix
