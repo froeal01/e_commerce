@@ -7,9 +7,15 @@ describe PurchasesController do
 
   describe "#new" do 
   	it "routes to the correct trip" do 
-	  	expect(get: "/purchases/#{trip.id}").to route_to(
+	  	expect(get: "/purchases/new#{trip.id}").to route_to(
 	  		controller: "purchases",
-	  		action: "new")
+	  		action: "new",
+	  		id: "new#{trip.id}")
+	  end
+
+	  it "renders the correct template based on city" do 
+	  	
+
 	  end
 
   end

@@ -22,9 +22,9 @@
         Your browser does not support the video.
         </video>
 					</figure>
-					<figure class = "uk-panel uk-panel-box back card">
+					<figure class = "uk-panel uk-panel-box back card"> 
 							<img src =<%=asset_path('Eiffel.jpeg') %>> 
-							<div class="ribbon-wrapper-green"> <div class = "ribbon-green">Click For Pricing!</div></div>
+							<div class="ribbon-wrapper-green"> <div class = "ribbon-green"><%= link_to "Click For Pricing!", new_purchase_path(trip_id: @paris.id)%></div></div>
 							<h3 class = "uk-panel-title">Paris</h3>
 					</figure> <!-- close back -->
 				</div> <!-- close flipper -->
@@ -39,7 +39,7 @@
 					</figure>
 					<figure class = "uk-panel uk-panel-box back card">
 							<img src =<%=asset_path('empire2.jpg') %>> 
-							<div class="ribbon-wrapper-green"> <div class = "ribbon-green">Click For Pricing!</div></div>
+							<div class="ribbon-wrapper-green"> <div class = "ribbon-green"><%= link_to "Click For Pricing!", new_purchase_path(trip_id: @ny.id)%></div></div>
 							<h3 class = "uk-panel-title">New York City</h3>
 					</figure> <!-- close back -->
 				</div> <!-- close flipper -->
@@ -54,7 +54,7 @@
 					</figure>
 					<figure class = "uk-panel uk-panel-box back card">
 							<img src =<%=asset_path('fuji.jpg') %>> 
-							<div class="ribbon-wrapper-green"> <div class = "ribbon-green">Click For Pricing!</div></div>
+							<div class="ribbon-wrapper-green"> <div class = "ribbon-green"><%= link_to "Click For Pricing!", new_purchase_path(trip_id: @tokyo.id)%></div></div>
 							<h3 class = "uk-panel-title">Tokyo</h3>
 					</figure> <!-- close back -->
 				</div> <!-- close flipper -->

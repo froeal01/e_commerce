@@ -377,14 +377,14 @@ body {
  */
 a,
 .uk-link {
-  color: #0077dd;
+  color: #333;
   text-decoration: none;
   cursor: pointer;
 }
 a:hover,
 .uk-link:hover {
   color: #005599;
-  text-decoration: underline;
+  text-decoration: none;
 }
 /*
  * Emphasize
