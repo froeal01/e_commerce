@@ -43,8 +43,9 @@ end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
-gem 'rspec-rails', group: [:test]
+gem 'rspec-rails', group: [:test, :development]
 gem 'cucumber-rails',:require => false, group: [:test]
+gem 'database_cleaner', group: [:development, :test]
 
 
 
