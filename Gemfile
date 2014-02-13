@@ -46,7 +46,7 @@ gem 'debugger', group: [:development, :test]
 gem 'rspec-rails', group: [:test, :development]
 gem 'cucumber-rails',:require => false, group: [:test]
 gem 'database_cleaner', group: [:development, :test]
-
+gem 'factory_girl_rails', group: [:test]
 
 
 
