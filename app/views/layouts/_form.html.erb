@@ -1,0 +1,36 @@
+	<br>
+	<legend> Buy Now! </legend>
+	<%= form_for @purchase do |f| %>
+	 <% if @purchase.errors.any? %>
+	 	<div class="error_messages">
+	 		<ul>
+		 		<%= @purchase.errors.full_messages.each do |error| %>
+		 			<li> <%= error %> <li>
+		 		<% end %>
+		 	</ul>
+		</div>
+		<%end%>
+
+		<%= f.hidden_field :trip_id %>
+
+		<div class = "uk-form-row">
+			<%= f.label :email %>
+			<%= f.text_field :email %>
+		</div>
+			<div class = "uk-form-row">
+				<%= label_tag :card_number, "Credit Card Number" %>
+				<%= text_field_tag :card_number, nil, name: nil %>
+			</div>
+			<div class = "uk-form-row">
+				<%= label_tag :card_code, "Security Code" %>
+				<%= text_field_tag :card_code, nil, name: nil %>
+			</div>
+			<div class = "uk-form-row">
+				<%= label_tag :card_month, "Credit Expiration"	 %>
+			   <%= select_month nil, {add_month_numbers: true}, {name: nil, id: "card_month"} %>
+	      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+			<div><br>
+		<div class = "uk-form-row submit">
+			<%= f.submit "Purchase" %>
+		</div>
+	<% end %>
