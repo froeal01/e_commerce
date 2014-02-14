@@ -3,7 +3,6 @@ class PurchasesController < ApplicationController
 
 	def new
 		trip = Trip.find(params[:trip_id])
-		@purchases = Purchase.new
 		@purchase = trip.purchases.build
 
 		if @purchase.trip_id == 1
@@ -31,7 +30,7 @@ class PurchasesController < ApplicationController
 
 	private
 
-	def purcahse_params
+	def purchase_params
 		params.require(:purchase).permit(:email)
 	end
 end
