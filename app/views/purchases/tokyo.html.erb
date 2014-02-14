@@ -1,0 +1,29 @@
+<nav class="uk-navbar">
+	<ul class= "uk-navbar-nav">
+		<li class = "uk-actve"><a href="/">Home Page</a></li>
+		<li class = "uk-actve"><a href="">Account</a></li>
+		<li class = "uk-actve"><a href="">About Us</a></li>
+	</ul>
+</nav>
+
+<div class = "uk-grid">
+	
+	<div class = "uk-width-4-6 greeting_div">
+
+		<div class = "img_div"><img class="trip_page" src= <%= asset_path('top_fuji.JPG') %>></div>
+		<h1 class= "greetings"> Greetings from: </h6>
+	
+
+	</div>
+
+	<div class = "uk-width-2-6 greeting_div_2">
+		<img class= "stamp" src = <%= asset_path('japan_stamp.jpeg') %> >
+		<div class= "trip_information">
+			<p>To: <%=@purchase.trip.location %></p><br>
+
+			<p>From: <%=@purchase.trip.cost%> for 10 days</p>
+			<form class = "uk-form"> <%= render 'layouts/form' %></form>
+		</div>
+
+	</div>
+</div>
