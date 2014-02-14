@@ -2,7 +2,7 @@ ECommerce::Application.routes.draw do
   root :to => "home_pages#index"
   
   resources :purchases
-
+  resources :trip
   
 
   # The priority is based upon order of creation: first created -> highest priority.

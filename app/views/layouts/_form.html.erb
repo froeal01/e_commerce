@@ -1,6 +1,6 @@
 	<br>
 	<legend> Buy Now! </legend>
-	<%= form_for @purchase do |f| %>
+	<%= form_for(@purchase, :method => :post) do |f| %>
 	 <% if @purchase.errors.any? %>
 	 	<div class="error_messages">
 	 		<ul>
@@ -31,6 +31,6 @@
 	      <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
 			<div><br>
 		<div class = "uk-form-row submit">
-			<%= f.submit "Purchase" %>
+			<%= f.submit "Purchase", :disabled => true %>
 		</div>
 	<% end %>
