@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
 	def create
 	@purchase	= Purchase.new(purchase_params)
 		if @purchase.save
-			redirect_to '/', :notice => "Enjoy your trip"
+			redirect_to @purchase, notice: "Your trip is now booked!"
 		else
 			redirect_to '/'
 		end
