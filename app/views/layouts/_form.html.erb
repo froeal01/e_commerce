@@ -13,11 +13,8 @@
 
 		<%= f.hidden_field :trip_id %>
 		<%= f.hidden_field :stripe_customer_token %>
+		<%= f.hidden_field :value_of_trip, value: "#{@purchase.trip.cost}"%>
 
-		<div class = "uk-form-row">
-			<%= f.label :email %>
-			<%= f.text_field :email %>
-		</div>
 		<% if @purchase.stripe_customer_token.present? %>
 			<p> Your card has been provided <p>
 		<% else %>

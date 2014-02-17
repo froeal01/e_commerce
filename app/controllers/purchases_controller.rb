@@ -16,14 +16,15 @@ class PurchasesController < ApplicationController
 
 	def create
 	@purchase	= Purchase.new(purchase_params)
-		if @purchase.save
-			redirect_to '/', :notice => "Enjoy your trip"
+		if @purchase.payment_saved?
+			redirect_to purchase_path(@purchase.trip_id), :notice => "Enjoy your trip"
 		else
 			redirect_to '/'
 		end
 	end	
 
 	def show
+		
 	end
 
 
@@ -31,6 +32,6 @@ class PurchasesController < ApplicationController
 	private
 
 	def purchase_params
-		params.require(:purchase).permit(:email)
+		params.require(:purchase).permit(:email, :stripe_customer_token, :trip_id, :value_of_trip)
 	end
 end
