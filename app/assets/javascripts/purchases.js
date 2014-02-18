@@ -1,12 +1,11 @@
 
 
 $(document).ready(function(){
-	Stripe.setPublishableKey("pk_test_IvhbIRXLO6j34kliLeQSJE2M");
-
-
+	Stripe.setPublishableKey($('meta[name = "stripe-key"]').attr('content'));
 
 
 	var setUpForm = function(){ $('#new_purchase').submit(function(){
+		debugger
 			$('input[type= submit]').attr('disabled',true);
 			processCard();
 			return false

@@ -19,7 +19,7 @@ class PurchasesController < ApplicationController
 		if @purchase.payment_saved?
 			redirect_to purchase_path(@purchase.trip_id), :notice => "Enjoy your trip"
 		else
-			redirect_to '/'
+			flash[:message] = "Something went wrong with your credit card"
 		end
 	end	
 
