@@ -17,9 +17,9 @@ class PurchasesController < ApplicationController
 	def create
 	@purchase	= Purchase.new(purchase_params)
 		if @purchase.payment_saved?
-			redirect_to purchase_path(@purchase.trip_id), :notice => "Enjoy your trip"
+		redirect_to purchase_path(@purchase.trip_id)
 		else
-			flash[:message] = "Something went wrong with your credit card"
+			redirect_to :back
 		end
 	end	
 

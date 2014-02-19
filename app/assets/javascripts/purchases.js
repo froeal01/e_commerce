@@ -5,7 +5,6 @@ $(document).ready(function(){
 
 
 	var setUpForm = function(){ $('#new_purchase').submit(function(){
-		debugger
 			$('input[type= submit]').attr('disabled',true);
 			processCard();
 			return false
@@ -25,7 +24,11 @@ $(document).ready(function(){
  var handleStripeResponse = function(status, response){
  	if (response.error)
  	{
- 		$('#stripe_error').text(response.error.message);
+ 		var originalColor = $('#stripe_error').css('background')
+ 		$('#stripe_error').text(response.error.message).show();
+ 		$('#stripe_error').animate({backgroundColor: "#FFFF00"}, 1000, function(){
+ 			$(this).animate({backgroundColor: originalColor}, 1000);
+ 		})
   	$('input[type=submit]').attr('disabled', false);
  		// alert(response.error.message);
 
