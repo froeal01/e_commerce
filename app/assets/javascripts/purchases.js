@@ -1,19 +1,18 @@
 
 
-$(document).ready(function(){
-	Stripe.setPublishableKey("pk_test_IvhbIRXLO6j34kliLeQSJE2M");
+$(function(){
+	Stripe.setPublishableKey($('meta[name = "stripe-key"]').attr('content'));
 
+	setUpForm();
 
-
-
-	var setUpForm = function(){ $('#new_purchase').submit(function(){
+		function setUpForm(){ $('#new_purchase').submit(function(){
 			$('input[type= submit]').attr('disabled',true);
 			processCard();
 			return false
 	});
 }
 
-	var processCard = function(){
+ function processCard() {
 		var card = {
 			number : $("#card_number").val(),
 			cvc: $('#card_code').val(),
@@ -23,14 +22,18 @@ $(document).ready(function(){
 		Stripe.createToken(card, handleStripeResponse); 
 	}
 
- var handleStripeResponse = function(status, response){
- 	if (response.error)
- 	{
- 		$('#stripe_error').text(response.error.message);
-  	$('input[type=submit]').attr('disabled', false);
+   var handleStripeResponse = function(status, response){
+ 		if (response.error)
+ 			{
+ 				var originalColor = $('#stripe_error').css('background')
+ 				$('#stripe_error').text(response.error.message).show();
+ 				$('#stripe_error').animate({backgroundColor: "#FFFF00"}, 1000, function(){
+ 					$(this).animate({backgroundColor: originalColor}, 1000);
+ 				});
+  			$('input[type=submit]').attr('disabled', false);
  		// alert(response.error.message);
 
-  }
+  	}
   else
   {
  		// alert(response.id);
@@ -38,5 +41,5 @@ $(document).ready(function(){
  		$('#new_purchase')[0].submit()
   }
  }
- setUpForm();
-});
+	
+ });
