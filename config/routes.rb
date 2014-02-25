@@ -1,6 +1,6 @@
 ECommerce::Application.routes.draw do
-  devise_for :users
   root :to => "home_pages#index"
+  devise_for :users
   
   resources :purchases
   resources :trip

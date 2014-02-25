@@ -63,9 +63,9 @@
     -ms-transform: rotateX(0deg);
     -moz-transform: rotateX(0deg);
     transform: rotateX(0deg);
-        -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-        transform: scale(1.2);
+        -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+        transform: scale(1.1);
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
     -moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
         box-shadow: 0 10px 20px rgba(0,0,0,.7);
@@ -232,12 +232,22 @@ video{
 .trip_information{
   margin-top: 200px;
 }
+
+
 .trip_information p{
   font-family: 'honey_scriptsemibold';
   text-decoration: underline;
   font-size: 3em;
 }
 
+.sign-in p{
+  font-family: times;
+  font-size: 2em;
+  text-decoration: none;
+  line-height: 30px;
+
+
+}
 form input[type="submit"] {
     cursor:pointer;
     background:url('/assets/submit.png') no-repeat;

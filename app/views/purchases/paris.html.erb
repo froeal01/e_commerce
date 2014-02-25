@@ -16,7 +16,13 @@
 			<p>To: <%=@purchase.trip.location %></p><br>
 
 			<p>From: <%=@purchase.trip.cost%> for 10 days</p>
+
+			<% if user_signed_in? %>
 				<div class = "uk-form"> <%= render 'layouts/form' %></div>
+			<% else %>
+				<div class = "sign-in uk-form"> <%= render 'sign_in' %> </div>
+			<% end %>
+
 		</div>
 
 	</div>
