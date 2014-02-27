@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140225211006) do
+ActiveRecord::Schema.define(version: 20140227183500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "credit_cards", force: true do |t|
+    t.string  "stripe_card_id"
+    t.integer "user_id"
+  end
 
   create_table "purchases", force: true do |t|
     t.string  "email"
@@ -23,8 +29,8 @@ ActiveRecord::Schema.define(version: 20140225211006) do
   end
 
   create_table "trips", force: true do |t|
-    t.string "location"
-    t.string "cost"
+    t.string  "location"
+    t.integer "cost"
   end
 
   create_table "users", force: true do |t|
@@ -38,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140225211006) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "stripe_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

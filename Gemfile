@@ -36,7 +36,7 @@ gem 'devise'
 gem 'jbuilder', '~> 1.2'
 
 #credit card processor
-gem 'stripe'
+gem 'stripe', '~>1.8.4'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
