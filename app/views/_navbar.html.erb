@@ -1,20 +1,20 @@
 <nav class="uk-navbar">
 	<ul class= "uk-navbar-nav">
 		<li class = "uk-actve"><a href="/">Home Page</a></li>
-		<li class = "uk-actve"><a href="">Account</a></li>
+		<li class = "uk-actve"><%=  link_to "Account", accounts_path %></li>
 		<li class = "uk-actve"><a href="">About Us</a></li>
 	</ul>
-		<% if !user_signed_in? %>
-	<div class= "uk-navbar-content uk-navbar-flip uk-hidden-small">
-		<div class = "uk-button-group">
-				<button class = "uk-button uk-button-danger"><%= link_to("Sign In", new_user_session_path)%> </button>
-				<button class = "uk-button uk-button-danger"><%= link_to("Sign Up", new_user_registration_path)%> </button>
+	<% if !user_signed_in? %>
+		<div class= "uk-navbar-content uk-navbar-flip uk-hidden-small">
+			<div class = "uk-button-group">
+					<button class = "uk-button uk-button-danger"><%= link_to("Sign In", new_user_session_path)%> </button>
+					<button class = "uk-button uk-button-danger"><%= link_to("Sign Up", new_user_registration_path)%> </button>
+			</div>
 		</div>
-	</div>
-		<% else %>
+	<% else %>
 		<div class= "uk-navbar-content uk-navbar-flip uk-hidden-small">
 			<button class = "uk-button uk-button-danger"><%= link_to("Log Out", destroy_user_session_path, method: :delete	)%> </button>
-		<% end %>
-	</div>
+	<% end %>
+		</div>
 </nav>
 

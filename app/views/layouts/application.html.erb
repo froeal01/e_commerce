@@ -9,6 +9,9 @@
 </head>
 <body>
 	<%= render '../views/navbar' %>
+	<%  if flash[:notice] || flash[:alert] %>
+			<%= render '../views/flash'%>
+	<%  end %>
 <%= yield %>
 
 </body>
