@@ -1,4 +1,4 @@
-/*! UIkit 2.3.1 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+k/*! UIkit 2.3.1 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
 
 /* ========================================================================
    Component: Normalize
@@ -4680,6 +4680,9 @@ select.uk-form-width-mini {
   border: 1px solid rgba(45, 112, 145, 0.3);
   border-radius: 4px;
   text-shadow: 0 1px 0 #ffffff;
+  width: 400px;
+  margin-left: 500px;
+  text-align: center;
 }
 /*
  * Add margin if adjacent element

@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
    if	new_user = Stripe::Customer.create(card: token)
    		CreditCard.create(user_id: @user.id) #need to refactor this out. too much dependency
    	 @user.stripe_user_id =  new_user["id"]
-   	 debugger
    	 @user.save
    	 @user.stripe_user_id
    end
