@@ -9,6 +9,7 @@ class AccountsController < ApplicationController
 		 if array_of_credit_card_ids[0] != 0
 		 	@array_of_card_hash = retrieve_card_info(array_of_credit_card_ids, customer_info)
 		 end
+		 @current_user
 	end
 
 

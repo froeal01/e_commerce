@@ -1,2 +1,27 @@
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<%=  @array_of_card_hash %>
+<div class = "container">
+
+	<div class = "uk-grid">
+
+		<div class = "uk-width-1-1">
+			<h3> Account Information</h6>
+				<p class= "label_for_account_info"><%=  label_tag :email_address %>
+				<p><%=  @current_user.email %></p><p>
+		</div>
+
+		<div class = "uk-width-1-1">
+			<h3> Card Info </h3>
+				<% @array_of_card_hash.each do |k| %>
+					<%= k[:"last4"] %>
+					<%=  k[:"type"] %>
+					<%=  k[:"exp_month"] %>
+					<%=  k[:"exp_year"] %>
+				<% end %>
+		</div>
+
+	</div>
+
+
+
+
+
+</div>
